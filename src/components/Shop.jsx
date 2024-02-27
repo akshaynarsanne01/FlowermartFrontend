@@ -10,7 +10,6 @@ const API_URL = "http://localhost:8001/products/";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [apiError, setApiError] = useState(null);
-  const [sortOption, setSortOption] = useState("default");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -41,12 +40,7 @@ const Shop = () => {
       <div className="sm:mx-4 lg:mx-44 p-20 bg-slate-300 flex justify-center text-2xl uppercase">
         FLOWERS shop
       </div>
-      <ShopContent
-        products={products}
-        apiError={apiError}
-        sortOption={sortOption}
-        setSortOption={setSortOption}
-      />
+      <ShopContent products={products} apiError={apiError} />
     </div>
   );
 };

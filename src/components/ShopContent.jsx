@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 import FilterCard from "./FilterCard";
 import Pagination from "./Pagination";
-const ShopContent = ({ products, apiError, sortOption, setSortOption }) => {
+const ShopContent = ({ products, apiError }) => {
+  const [sortOption, setSortOption] = useState("default");
   const handleSortChange = (e) => {
     setSortOption(e.target.value);
   };
@@ -27,12 +28,9 @@ const ShopContent = ({ products, apiError, sortOption, setSortOption }) => {
       </div>
       <div className="col-span-4 sm:col-span-3">
         <div className="flex justify-end items-center space-x-4">
-          <label
-            htmlFor="countries"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >
+          <p className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Sort By:
-          </label>
+          </p>
           <select
             id="filter"
             value={sortOption}

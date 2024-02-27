@@ -30,7 +30,13 @@ const AppRoutes = () => {
     <Router>
       <Header isLoggedIn={isLoggedIn} />
       <ToastContainer />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center w-full h-screen">
+            Loading...
+          </div>
+        }
+      >
         <Routes>
           <>
             <Route path="/" element={<Body />} />
