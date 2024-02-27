@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import product1 from "/product2.jpg";
 import product2 from "/product2.jpg";
+import PageHeader from "./PageHeader";
 const SingleProduct = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -23,12 +24,7 @@ const SingleProduct = () => {
   }, []);
   return (
     <div>
-      <h1 className="m-4 sm:mx-20 lg:mx-56 sm:my-8">
-        <Link to="/">
-          <span className="pr-2">Home</span>
-        </Link>
-        /<span className="px-2">{data.name}</span>
-      </h1>
+      <PageHeader pagename={`${data.name}`} />
       {apiError ? (
         <div className="h-[440px] flex justify-center items-center bg-neutral-100 m-4 rounded-xl">
           <div className="text-center text-red-500">{apiError}</div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Ecommerce from "/ecommerce.png";
 import { Link } from "react-router-dom";
+import PageHeader from "./PageHeader";
 const orderSummary = {
   subTotal: "$250.00",
   total: "$250.00",
@@ -61,13 +62,7 @@ const Cart = () => {
   return (
     <>
       <div className="h-auto">
-        <h1 className="sm:mx-4 lg:mx-44 my-2 p-4">
-          {" "}
-          <Link to="/">
-            <span className="pr-2">Home</span>
-          </Link>
-          /<span className="px-2">shopping Cart</span>
-        </h1>
+        <PageHeader pagename={"Cart"} />
         {isCartEmpty && (
           <div className="flex flex-col h-[480px] justify-center items-center space-y-6">
             <h1 className="text-3xl font-medium">Shopping Cart</h1>
